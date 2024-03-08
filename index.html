@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto UD05 · Oliver Fabian Stetcu Stepanov</title>
+
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- Cabecera -->
+    <header>
+        <h1>Oliver Fabián Stetcu Stepanov</h1>
+    </header>
+
+    <!-- Zona de Navegación -->
+    <nav>
+        <ul>
+            <li>
+                <a href="#css">CSS</a>
+            </li>
+            <li>
+                <a href="#canva">Canva</a>
+            </li>
+            <li>
+                <a href="#svg">SVG</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <!-- Zona de Contenido -->
+    <main>
+        <section id="css">
+            <h2>Tecnología CSS</h2>
+            <div class="subzona">
+                <h3>⚡ Transición ⚡</h3>
+                
+                <article>
+                    <div class="transicion">¡Pasa el cursor por encima!</div>
+                </article>
+            </div>
+            
+            <div class="subzona">
+                <h3>🌹 Animación de una rosa 🌹</h3>
+
+                <article>
+                    <!-- Contenedor para la rosa y los botones -->
+                    <div class="container-rosa">
+                        <div class="cristal">
+                            <div class="brillo"></div>
+                        </div>
+    
+                        <div class="espinas">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+    
+                        <div class="hojas">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+    
+                        <div class="petalos">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div><br><br>
+    
+                        <!-- Botones para comenzar y parar las animaciones -->
+                        <div class="botones">
+                            <button id="empezarAnimacion">Comenzar Animación</button>
+                            <button id="pararAnimacion">Parar Animación</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="canva">
+            <h2>Tecnología Canva</h2>
+            <div class="subzona">
+                <h3>✨ Canva Dibujo ✨</h3>
+                
+                <h4>🔵 Figura 1 🔵</h4>
+                <canvas id="lienzoFigura1" width="300" height="300"></canvas><br><hr>
+
+                <h4>🟢 Figura 2 🟢</h4>
+                <canvas id="lienzoFigura2" width="400" height="400"></canvas>
+            </div>
+            <div class="subzona">
+                <h3>👑 Canva Animación 👑</h3>
+                
+                <canvas id="lienzoAnimacionCanva" width="800" height="500"></canvas>
+            </div>
+        </section>
+
+        <section id="svg">
+            <h2>Tecnología SVG</h2>
+            <div class="subzona">
+                <h3>💎 SVG Dibujo 💎</h3>
+                
+                <svg id="dibujoSVG" width="400" height="200">
+                    <!-- Estrella -->
+                    <polygon points="100,20 120,70 170,70 130,100 150,150 100,120 50,150 70,100 30,70 80,70" fill="gold" stroke="black" stroke-width="2" />
+                
+                    <!-- Caja/Cubo -->
+                    <rect x="200" y="20" width="80" height="100" fill="lightgreen" stroke="black" stroke-width="2" />
+                    <polygon points="200,20 240,40 320,40 280,20" fill="lightgreen" stroke="black" stroke-width="2" />
+                    <polygon points="240,40 240,140 280,120 280,20" fill="lightgreen" stroke="black" stroke-width="2" />
+                    <polygon points="280,20 320,40 320,140 280,120" fill="lightgreen" stroke="black" stroke-width="2" />
+                    <polygon points="200,120 240,140 320,140 280,120" fill="lightgreen" stroke="black" stroke-width="2" />
+                    
+                    <!-- Medio Arco -->
+                    <path d="M350,20 A50,50 0 0,1 400,70 L380,70 A30,30 0 0,0 350,40 Z" fill="lightcoral" stroke="black" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="subzona">
+                <h3>⭐ SVG Animación ⭐</h3>
+                
+                <svg id="animacionSVG" width="800" height="600">
+                    <text id="moverTexto" x="100" y="100">¡Animación de Texto!</text>
+                </svg>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li>
+                <strong>CSS:</strong>
+                <ul>
+                    <li>La transición ha sido sencilla y el resultado es bonito.</li>
+                    <li>Me ha encantado el resultado final pero me ha costado bastante hacer la animación de la rosa.</li>
+                </ul>
+            </li><br>
+            <li>
+                <strong>Canva:</strong>
+                <ul>
+                    <li>Me gusta el estilo de las figuras que he realizado porque son poco comunes y estéticamente muy bonitas.</li>
+                    <li>La animación la verdad que no me ha gustado mucho como ha quedado, se podría mejorar.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>SVG:</strong>
+                <ul>
+                    <li>Las figuras me han costado bastante hacerlas pero me encanta el resultado final.</li>
+                    <li>Es la animación más compleja de realizar en cuanto al código, he tardado varias tardes en realizarla (al igual que la rosa) pero he aprendido mucho.</li>
+                </ul>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Enlace para el js -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

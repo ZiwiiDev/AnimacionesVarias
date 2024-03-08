@@ -1,0 +1,444 @@
+/*-------------------------------------------------------------------------------*/
+/* Oliver Fabián Stetcu | 2º DAW */
+/*-------------------------------------------------------------------------------*/
+/* Defino variables para colores y otros estilos globales */
+:root {
+  /* Estilos generales */
+  --color-footer: #333;
+
+  /* Estilos para la TRANSICIÓN */
+  --color-fondo-boton: #ffee00; /* Color del fondo del botón */
+  --color-fondo: #fffbfb;
+  --color-hover: #1625fd;
+
+  /* Estilos para la ANIMACIÓN */
+  --color-hoja-caida: #71122a; /* Color de la hoja al caer */
+  --color-sombra: rgba(245, 148, 184, 0); /* Color de la sombra */
+  --color-hoja-inicio: #d52d58; /* Color de la hoja al inicio */
+  --color-blanco: #f0f0f0;
+  --color-negro: #020202;
+  --color-hoja-final: rgb(245, 20, 84);
+  --color-hoja-intermedio: #9d193b;
+  --color-espinas: #054c05;
+  --color-hoja-borde: #066406;
+  --color-hoja-fondo: #054c05;
+  --color-ultimos-petalos: #c9204b;
+  --color-intemedio-petalos: #b81b43;
+  --color-primeros-petalos: #ab1a3f;
+  --color-rosa: #f594b8;
+  --color-sombra-petalos: rgba(245, 148, 184, 0.5);
+  --color-boton: #45a049;
+
+  /* Estilos para SVG */
+  --color-azul: blue;
+}
+/*-------------------------------------------------------------------------------*/
+/* ANIMACIONES */
+@keyframes caer {
+  50% {
+    transform: rotate(-90deg);
+    top: 200px;
+    left: 100px;
+  }
+
+  100% {
+    transform: rotate(-60deg);
+    top: 252px;
+    left: 50px;
+    background: var(--color-hoja-caida);
+    box-shadow: 0px 0px 0px var(--color-sombra);
+  }
+}
+
+@keyframes rotacion {
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes rotacion2 {
+  100% {
+    transform: rotate(-20deg);
+  }
+}
+
+@keyframes rotacion3 {
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes rotacion4 {
+  100% {
+    transform: rotate(-5deg);
+  }
+}
+
+@keyframes rotacion5 {
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes brillo {
+  50% {
+    background: var(--color-hoja-final);
+    box-shadow: 0px 0px 60px var(--color-blanco);
+  }
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el <html> y <body> */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el <body> */
+body {
+  background: var(--color-fondo);
+}
+
+/* Estilos para el <footer> */
+footer {
+  background-color: var(--color-footer);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 10px;
+}
+
+/* Estilos para el título del <h3> */
+h3,
+h4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el título del <header> */
+header h1 {
+  color: var(--color-negro);
+  letter-spacing: 10px; /* Separación de 30px entre cada carácter */
+  justify-content: center; /* Defino cómo el navegador distribuye el espacio entre y alrededor de los elementos */
+  align-content: center; /* Ajusto las líneas dentro del contenedor cuando haya espacio extra */
+  text-shadow: 5px 5px 5px #00d9ff, 10px 10px 10px #6200ff; /* Aplico sombra de dos colores diferentes */
+  grid-column: span 1; /* Hace que el h1 abarque una columna completa */
+  font-size: 50px;
+}
+
+/* Estilos para el <header> */
+header {
+  background-color: var(--color-blanco);
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background-color: var(--color-negro);
+  padding: 10px;
+  word-spacing: 55px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: var(--color-blanco);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Estilos para el <main> */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+section {
+  border: 1px solid var(--color-negro);
+  padding: 15px;
+}
+
+/* Estilos para las subzonas */
+.subzona {
+  border: 1px solid var(--color-negro);
+  padding: 20px;
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para la TRANSICIÓN */
+.transicion {
+  padding: 20px;
+  border: 2px solid var(--color-negro);
+  background-color: var(--color-fondo-boton);
+  opacity: 1;
+  text-align: center;
+  transform: scale(0.85);
+  transition-property: opacity, transform, background-color;
+  transition-duration: 0.5s, 1s, 0.3s;
+  transition-timing-function: linear, ease-in-out, ease;
+  -webkit-transform: scale(0.85);
+  -moz-transform: scale(0.85);
+  -ms-transform: scale(0.85);
+  -o-transform: scale(0.85);
+}
+
+.transicion:hover {
+  opacity: 0.5;
+  transform: scale(1);
+  color: var(--color-fondo);
+  background-color: var(--color-hover);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para la ANIMACIÓN */
+.container-rosa {
+    position: relative; /* Establezco posición relativa para posicionar elementos hijos */
+    width: 200px;
+    margin: 0 auto; /* Centro horizontalmente dentro del contenedor */
+}
+
+.cristal {
+  height: 350px;
+  width: 200px;
+}
+
+.petalos > div {
+  position: absolute;
+  background: var(--color-hoja-inicio);
+  width: 45px;
+  height: 80px;
+  top: 55px;
+  transition: all 0.5s ease-out;
+}
+
+.petalos > div:nth-child(1) {
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px var(--color-rosa);
+  left: 80px;
+  top: 60px;
+  background: var(--color-hoja-inicio);
+}
+
+.petalos > div:nth-child(2),
+.petalos > div:nth-child(4),
+.petalos > div:nth-child(6) {
+  background: var(--color-intemedio-petalos);
+  left: 60px;
+  border-radius: 0px 30px 0px 30px;
+  transform-origin: bottom right;
+}
+
+.petalos > div:nth-child(3),
+.petalos > div:nth-child(5),
+.petalos > div:nth-child(7) {
+  background: var(--color-intemedio-petalos);
+  left: 100px;
+  border-radius: 30px 0px 30px 0px;
+  transform-origin: bottom left;
+}
+
+.petalos > div:nth-child(2) {
+  z-index: 5;
+  background: var(--color-primeros-petalos);
+  top: 75px;
+  height: 70px;
+  box-shadow: 0px 0px 50px var(--color-sombra-petalos);
+  animation: caer 3s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+.petalos > div:nth-child(3) {
+  z-index: 4;
+  background: var(--color-primeros-petalos);
+  top: 75px;
+  height: 70px;
+  box-shadow: 0px 0px 50px var(--color-sombra-petalos);
+  animation: rotacion 3s ease-in-out, brillo 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.petalos > div:nth-child(4) {
+  z-index: 3;
+  background: var(--color-intemedio-petalos);
+  top: 70px;
+  height: 75px;
+  box-shadow: 0px 0px 50px var(--color-sombra-petalos);
+  animation: rotacion2 3s ease-in-out, brillo 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.petalos > div:nth-child(5) {
+  z-index: 2;
+  background: var(--color-intemedio-petalos);
+  top: 70px;
+  height: 75px;
+  box-shadow: 0px 0px 50px var(--color-sombra-petalos);
+  animation: rotacion3 3s ease-in-out, brillo 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.petalos > div:nth-child(6) {
+  z-index: 1;
+  background: var(--color-ultimos-petalos);
+  top: 65px;
+  height: 70px;
+  box-shadow: 0px 0px 50px var(--color-sombra-petalos);
+  animation: rotacion4 3s ease-in-out, brillo 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.petalos > div:nth-child(7) {
+  z-index: 0;
+  background: var(--color-ultimos-petalos);
+  top: 65px;
+  height: 70px;
+  box-shadow: 0px 0px 50px var(--color-sombra-petalos);
+  animation: rotacion5 3s ease-in-out, brillo 2.5s ease-in-out infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+.hojas > div:nth-child(1) {
+  position: absolute;
+  width: 6px;
+  height: 210px;
+  background: var(--color-hoja-fondo);
+  top: 95px;
+  left: 100px;
+  border-radius: 0 0 100px 100px;
+}
+
+.hojas > div:nth-child(2) {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  top: 53px;
+  border-radius: 5px 40px 20px 40px;
+  background: var(--color-hoja-fondo);
+  transform-origin: bottom;
+  transform: rotate(-30deg);
+  top: 180px;
+  left: 80px;
+  box-shadow: inset 5px 5px var(--color-hoja-borde);
+}
+
+.hojas > div:nth-child(3) {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  top: 53px;
+  border-radius: 40px 5px 40px 20px;
+  background: var(--color-hoja-fondo);
+  transform-origin: bottom;
+  transform: rotate(30deg);
+  top: 150px;
+  left: 95px;
+  box-shadow: inset -5px 5px var(--color-hoja-borde);
+}
+
+.espinas > div {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 140px;
+}
+
+.espinas > div:nth-child(odd) {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid var(--color-espinas);
+  left: 105px;
+}
+
+.espinas > div:nth-child(even) {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid var(--color-espinas);
+  left: 95px;
+}
+
+.espinas > div:nth-child(1) {
+  top: 200px;
+}
+
+.espinas > div:nth-child(2) {
+  top: 170px;
+}
+
+.espinas > div:nth-child(4) {
+  top: 230px;
+}
+
+/* Estilos para los botones */
+.botones button {
+    padding: 10px 20px;
+    background-color: var(--color-boton);
+    color: var(--color-blanco);
+    border: none;
+    cursor: pointer;
+    margin-right: 10px; /* Espacio entre los botones */
+    border-radius: 5px;
+}
+
+/* Estilos para el contenedor de los botones */
+.botones {
+    position: absolute;
+    top: 50%; /* Posiciono el contenedor en la mitad vertical */
+    right: -450px; /* Posiciono el contenedor a la derecha de la animación */
+}
+
+/* Estilos adicionales para los botones cuando están en hover */
+.botones button:hover {
+    background-color: var(--color-negro);
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el dibujo de CANVA y animación de CANVA */
+#lienzoFigura1,
+#lienzoFigura2,
+#lienzoAnimacionCanva {
+  border: 1px solid var(--color-negro);
+  display: block;
+  margin: auto;
+}
+/*-------------------------------------------------------------------------------*/
+/* Estilos para el SVG */
+#dibujoSVG,
+#animacionSVG {
+  display: block;
+  margin: auto;
+  border: 1px solid var(--color-negro);
+}
+
+text {
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  fill: var(--color-azul);
+  transition: fill 0.5s ease;
+}
+
+circle {
+  transition: fill 0.5s ease;
+}
+/*-------------------------------------------------------------------------------*/
